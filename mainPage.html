@@ -256,7 +256,7 @@
     <div class="head-ing card" data-filter="Technical">
         <h2>Technical Team<br></h2>
     </div>
-    <section class="container card card" data-filter="Technical">
+    <section class="container card" data-filter="Technical">
         <div class="center-align">
             <div class="row row-img active-with-click">
 
@@ -1123,6 +1123,34 @@
         /*FILTER/CARDS PAGES JS************************************/
         var filterBtns = $('.filter-btn');
         var cards = $('.card');
+        document.getElementsByClassName("card")[2].style.display = "none"
+        document.getElementsByClassName("card")[3].style.display = "none"
+        document.getElementsByClassName("card")[4].style.display = "none"
+        document.getElementsByClassName("card")[5].style.display = "none"
+
+        function insideNav(event){
+            event.preventDefault();
+            $('.selected').removeClass('selected');
+            $(this).addClass('selected');
+            console.log(cards)
+                /*Takes care of showing correct cards*/
+            var currentFilter = $(this).attr('data-filter');
+            if (currentFilter === 'all') {
+                jQuery.each(cards, function(i, v) {
+                    $(this).show();
+                });
+            } else {
+                jQuery.each(cards, function(i, v) {
+                    /*If statement checks if any of the filters are in the currentFilter*/
+                    if (v.getAttribute('data-filter').indexOf(currentFilter) >= 0) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+
+        }
         filterBtns.click(function(event) {
             /*Takes care of highlighting current filter*/
             event.preventDefault();
