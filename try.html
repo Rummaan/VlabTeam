@@ -1,0 +1,637 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Card Design Filter </title>
+  	<meta charset="UTF-8">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  
+<style>
+body {
+  font-family: 'Roboto';
+  font-size: 16px;
+  background: #fff;
+}
+.tv-case-studies {
+    min-height:500px;
+}
+ul.tv-filter-tm {
+  padding:0;
+  text-align:center;
+  list-style:none;
+  margin-top:25px;
+  margin-bottom:25px;
+}
+ul.tv-filter-tm li {
+  display:inline-block;
+  padding:7px 15px;
+  margin-right:15px;
+  margin-bottom:15px;
+  border-radius:3px;
+  cursor:pointer;
+}
+ul.tv-filter-tm li:hover {
+  color:#ffffff;
+
+}
+article.tv-card-tm {
+  display:block;
+  position: initial;
+  top:0px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  -webkit-transition: box-shadow 0.3s;
+		  transition: box-shadow 0.3s;
+  margin-top:20px;
+  margin-bottom:20px;
+  border-radius:5px;
+  overflow:hidden;
+  word-wrap: break-word;
+	padding:0;
+}
+article.tv-card-tm:hover {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
+figure.tv-thumb-card-tm {
+  height: 90px;
+  overflow: hidden;
+  background-color: #000;
+  text-align:center;
+  position:relative;
+}
+figure.tv-thumb-card-tm img {
+  display: block;
+  opacity: .8;
+  position:relative;
+  width:auto;
+  width:100%;
+  height:100%;
+}
+.tv-card-icon-tm {
+  position: absolute;
+  top: 25%;
+  right: 15px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  line-height: 13px;
+  font-weight: bold;
+  padding-top: 10px;
+  z-index:5;
+
+}
+
+
+
+.tv-case-study-hide {
+   -webkit-animation-name: pulse-hide;
+  animation-name: pulse-hide; 
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.tv-case-study-show {
+  display:block !important;
+   -webkit-animation-name: pulse;
+  animation-name: pulse; 
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.tv-card-icon-tm a {
+  color:#ffffff !important;
+}
+.tv-card-category-tm {
+  position: absolute;
+  bottom:0;
+  height: 25px;
+  padding: 0 15px;
+  color: #fff;
+  font-size: 11px;
+  line-height: 25px;
+}
+.tv-card-category-tm a {
+  color: #fff !important;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.tv-card-title-tm {
+  padding:10px 20px;
+  font-size:23px;
+  text-align:left;
+  font-weight:400;
+  height:90px;
+}
+.tv-card-title-tm a {
+  text-decoration:none;
+  color:#219ae2;
+}
+.tv-card-title-tm a:hover {
+  color:#018fc5 !important
+}
+.tv-card-sub-title-tm,.tv-card-sub-title-tm p {
+  padding: 0px 10px;
+  margin:0;
+  font-size:19px;
+  font-style:italic;
+  color:#999999;
+  font-weight:400;
+  height:45px;
+}
+.tv-card-description-tm {
+	height:150px
+}
+.tv-card-description-tm,.tv-card-description-tm p {
+  padding:5px 10px;
+  color:#555555;
+  font-size:16px !important;
+}
+.tv-card-footer-tm {
+  background:#fbfbfb;
+  border-top:1px solid #dedede;
+  padding:10px 20px;
+}
+.tv-card-time-tm {
+  font-size:14px;
+  color:#aaaaaa;
+  padding-left:20px;
+}
+.tv-card-time-tm i {
+  font-size:18px;
+  position:absolute;
+  top:2px;
+  left:10px;
+}
+.tv-card-link {
+  text-align:right;
+}
+.tv-card-link a {
+  color:#219ae2;
+  text-decoration:none;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@-webkit-keyframes pulse-hide {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    display:none;
+  }
+}
+
+@keyframes pulse-hide {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    opacity:1
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+    visibility:none;
+    display:none;
+    opacity:0;
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    visibility:none;
+    display:none;
+    opacity:0;
+    width:0;
+    height:0;
+    overflow:hidden;
+    padding:0;
+    margin-left:0;
+    margin-right:0;
+  }
+}
+</style>
+
+</head>
+
+<body translate="no" >
+  <style> 
+  #filter__All:hover,#filter__All.active {
+    background-color:#333333;
+    color:#fff;
+  }
+  #filter__Chemicals:hover,#filter__Chemicals.active {
+    background-color:#F44336;
+    color:#fff;
+  }
+  #filter__Financial:hover,#filter__Financial.active {
+    background-color:#9C27B0;
+    color:#fff;
+  }
+  #filter__HomeAppliance:hover,#filter__HomeAppliance.active {
+    background-color:#1B5E20;
+    color:#fff;
+  }
+  #filter__InformationTechnology:hover,#filter__InformationTechnology.active {
+    background-color:#aaaaaa;
+    color:#fff;
+  }
+  #filter__Insurance:hover,#filter__Insurance.active {
+    background-color:#009688;
+    color:#fff;
+  }
+  #filter__Manufacturing:hover,#filter__Manufacturing.active {
+    background-color:#FF5722;
+    color:#fff;
+  }
+  #filter__Mining:hover,#filter__Mining.active {
+    background-color:#795548;
+    color:#fff;
+  }
+  #filter__Pharmaceutical:hover,#filter__Pharmaceutical.active {
+    background-color:#607D8B;
+    color:#fff;
+  }
+  #filter__StateLocal:hover,#filter__StateLocal.active {
+    background-color:#FFA000;
+    color:#fff;
+  }
+  #filter__Telecommunications:hover,#filter__Telecommunications.active {
+    background-color:#219ae2;
+    color:#fff;
+  }
+
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 tv-icons-filter-container-tm">
+        <ul class="tv-filter-tm">
+          <li id="filter__All" class="active" >All</li>
+          <li id="filter__Chemicals"  data-category="chemicals">Chemicals</li>
+          <li id="filter__Financial" data-category="financial">Financial</li>
+          <li id="filter__HomeAppliance" data-category="homeappliance">Home Appliance</li>
+          <li id="filter__InformationTechnology" data-category="informationtechnology">Information Technology</li>
+          <li id="filter__Insurance" data-category="insurance">Insurance</li>
+          <li id="filter__Manufacturing" data-category="manufacturing">Manufacturing</li>
+          <li id="filter__Mining" data-category="mining">Mining</li>
+          <li id="filter__Pharmaceutical" data-category="pharmaceutical">Pharmaceutical</li>
+          <li id="filter__StateLocal" data-category="statelocal">State & Local</li>
+          <li id="filter__Telecommunications" data-category="telecommunications">Telecommunications</li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row tv-case-studies">
+    <div class="col-md-4 tv-filter-item tv-case-study tv-case-study-show" data-category="telecommunications">
+      
+      <article class="tv-card-tm">
+        
+        <figure class="tv-thumb-card-tm">
+          <a href="#">
+            <img src="https://www.artelys.com/uploads/images/telecommunications/Tel2.jpg" alt="" />
+          </a>
+          <div class="tv-card-icon-tm" style="background-color:#219ae2;">
+            <a href="#">
+             <i class="material-icons">settings_input_antenna</i>
+            </a>
+          </div>
+          <div class="tv-card-category-tm" style="background-color:#219ae2;">
+            <a href="#">Telecommunication</a></div>
+        </figure>
+        <div class="tv-card-title-tm">
+          <a href="#">
+            Telecommunications
+          </a>
+        </div>
+        <div class="tv-card-sub-title-tm">
+          <p>Some Sub title important...</p>
+        </div>
+        <div class="tv-card-description-tm">
+          <p>Some Description for de case study not too long...</p>
+        </div>
+        <div class="tv-card-footer-tm">
+          <div class="row">
+            <div class="col-md-6">
+              <span class="tv-card-time-tm"><i class="material-icons">access_time</i> May 2016</span>
+            </div>
+            <div class="col-md-6 tv-card-link">
+            <a href="#"> Learn More...</a>
+            </div>
+          </div>
+          
+        </div>
+      </article>
+      <!-- End Card Item -->
+      
+      
+    </div>
+    <div class="col-md-4 tv-filter-item tv-case-study tv-case-study-show" data-category="chemicals">
+      <article class="tv-card-tm">
+        
+        <figure class="tv-thumb-card-tm">
+          <a href="#">
+            <img src="https://www.artelys.com/uploads/images/telecommunications/Tel2.jpg" alt="" />
+          </a>
+          <div class="tv-card-icon-tm" style="background-color:#F44336;">
+            <a href="#">
+             <i class="material-icons">settings_input_antenna</i>
+            </a>
+          </div>
+          <div class="tv-card-category-tm" style="background-color:#F44336;">
+            <a href="#">Chemicals
+            </a></div>
+        </figure>
+        <div class="tv-card-title-tm">
+          <a href="#">
+            Chemicals
+
+          </a>
+        </div>
+        <div class="tv-card-sub-title-tm">
+          <p>Some Sub title important...</p>
+        </div>
+        <div class="tv-card-description-tm">
+          <p>Some Description for de case study not too long...</p>
+        </div>
+        <div class="tv-card-footer-tm">
+          <div class="row">
+            <div class="col-md-6">
+              <span class="tv-card-time-tm"><i class="material-icons">access_time</i> May 2016</span>
+            </div>
+            <div class="col-md-6 tv-card-link">
+            <a href="#"> Learn More...</a>
+            </div>
+          </div>
+          
+        </div>
+      </article>
+      <!-- End Card Item -->
+    </div>
+    <div class="col-md-4 tv-filter-item tv-case-study" data-category="financial">
+      <article class="tv-card-tm">
+        
+        <figure class="tv-thumb-card-tm">
+          <a href="#">
+            <img src="https://www.artelys.com/uploads/images/telecommunications/Tel2.jpg" alt="" />
+          </a>
+          <div class="tv-card-icon-tm" style="background-color:#9C27B0;">
+            <a href="#">
+             <i class="material-icons">settings_input_antenna</i>
+            </a>
+          </div>
+          <div class="tv-card-category-tm" style="background-color:#9C27B0;">
+            <a href="#">Financial</a></div>
+        </figure>
+        <div class="tv-card-title-tm">
+          <a href="#">
+            Financial
+          </a>
+        </div>
+        <div class="tv-card-sub-title-tm">
+          <p>Some Sub title important...</p>
+        </div>
+        <div class="tv-card-description-tm">
+          <p>Some Description for de case study not too long...</p>
+        </div>
+        <div class="tv-card-footer-tm">
+          <div class="row">
+            <div class="col-md-6">
+              <span class="tv-card-time-tm"><i class="material-icons">access_time</i> May 2016</span>
+            </div>
+            <div class="col-md-6 tv-card-link">
+            <a href="#"> Learn More...</a>
+            </div>
+          </div>
+          
+        </div>
+      </article>
+      <!-- End Card Item -->
+    </div>
+    <div class="col-md-4 tv-filter-item tv-case-study" data-category="insurance">
+      
+      <article class="tv-card-tm">
+        
+        <figure class="tv-thumb-card-tm">
+          <a href="#">
+            <img src="https://www.artelys.com/uploads/images/telecommunications/Tel2.jpg" alt="" />
+          </a>
+          <div class="tv-card-icon-tm" style="background-color:#009688;">
+            <a href="#">
+             <i class="material-icons">settings_input_antenna</i>
+            </a>
+          </div>
+          <div class="tv-card-category-tm" style="background-color:#009688;">
+            <a href="#">Insurance
+</a></div>
+        </figure>
+        <div class="tv-card-title-tm">
+          <a href="#">
+            Insurance
+
+          </a>
+        </div>
+        <div class="tv-card-sub-title-tm">
+          <p>Some Sub title important...</p>
+        </div>
+        <div class="tv-card-description-tm">
+          <p>Some Description for de case study not too long...</p>
+        </div>
+        <div class="tv-card-footer-tm">
+          <div class="row">
+            <div class="col-md-6">
+              <span class="tv-card-time-tm"><i class="material-icons">access_time</i> May 2016</span>
+            </div>
+            <div class="col-md-6 tv-card-link">
+            <a href="#"> Learn More...</a>
+            </div>
+          </div>
+          
+        </div>
+      </article>
+      <!-- End Card Item -->
+      
+      
+    </div>
+    <div class="col-md-4 tv-filter-item tv-case-study" data-category="manufacturing">
+      <article class="tv-card-tm">
+        
+        <figure class="tv-thumb-card-tm">
+          <a href="#">
+            <img src="https://www.artelys.com/uploads/images/telecommunications/Tel2.jpg" alt="" />
+          </a>
+          <div class="tv-card-icon-tm" style="background-color:#FF5722;">
+            <a href="#">
+             <i class="material-icons">settings_input_antenna</i>
+            </a>
+          </div>
+          <div class="tv-card-category-tm" style="background-color:#FF5722;">
+            <a href="#">Manufacturing
+</a></div>
+        </figure>
+        <div class="tv-card-title-tm">
+          <a href="#">
+            Manufacturing
+
+          </a>
+        </div>
+        <div class="tv-card-sub-title-tm">
+          <p>Some Sub title important...</p>
+        </div>
+        <div class="tv-card-description-tm">
+          <p>Some Description for de case study not too long...</p>
+        </div>
+        <div class="tv-card-footer-tm">
+          <div class="row">
+            <div class="col-md-6">
+              <span class="tv-card-time-tm"><i class="material-icons">access_time</i> May 2016</span>
+            </div>
+            <div class="col-md-6 tv-card-link">
+            <a href="#"> Learn More...</a>
+            </div>
+          </div>
+          
+        </div>
+      </article>
+      <!-- End Card Item -->
+    </div>
+    <div class="col-md-4 tv-filter-item tv-case-study" data-category="mining">
+      <article class="tv-card-tm">
+        
+        <figure class="tv-thumb-card-tm">
+          <a href="#">
+            <img src="https://www.artelys.com/uploads/images/telecommunications/Tel2.jpg" alt="" />
+          </a>
+          <div class="tv-card-icon-tm" style="background-color:#795548;">
+            <a href="#">
+             <i class="material-icons">settings_input_antenna</i>
+            </a>
+          </div>
+          <div class="tv-card-category-tm" style="background-color:#795548;">
+            <a href="#">Mining
+</a></div>
+        </figure>
+        <div class="tv-card-title-tm">
+          <a href="#">
+            Mining
+
+          </a>
+        </div>
+        <div class="tv-card-sub-title-tm">
+          <p>Some Sub title important...</p>
+        </div>
+        <div class="tv-card-description-tm">
+          <p>Some Description for de case study not too long...</p>
+        </div>
+        <div class="tv-card-footer-tm">
+          <div class="row">
+            <div class="col-md-6">
+              <span class="tv-card-time-tm"><i class="material-icons">access_time</i> May 2016</span>
+            </div>
+            <div class="col-md-6 tv-card-link">
+            <a href="#"> Learn More...</a>
+            </div>
+          </div>
+          
+        </div>
+      </article>
+      <!-- End Card Item -->
+    </div>
+  </div>
+</div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+      <script id="rendered-js" >
+//show hide case studies as needed using filters
+$(".tv-filter-tm li").click(function () {
+  var $filterButton = $(this);
+  $(".tv-filter-tm li").removeClass("active");
+  $filterButton.addClass("active");
+  var $data = $filterButton.parent().parent().parent().parent().parent().find(".tv-case-studies");
+  var $filter, $outerFilter;
+  if ($filterButton.attr("id") === "filter__All") {
+    $data.find('.tv-case-study').removeClass("tv-case-study-show");
+    $data.find('.tv-case-study').addClass("tv-case-study-hide");
+
+    $filter = $data.find('.tv-case-study');
+
+    $filter.removeClass("tv-case-study-hide");
+    setTimeout(function () {$filter.addClass("tv-case-study-show");}, 20);
+
+    //  $filter.slideDown(800);
+  } else {
+    $filter = $data.find('.tv-case-study[data-category=' + $filterButton.attr("data-category") + ']');
+    $data.find('.tv-case-study').removeClass("tv-case-study-show");
+    $data.find('.tv-case-study').addClass("tv-case-study-hide");
+
+    $filter.removeClass("tv-case-study-hide");
+    setTimeout(function () {$filter.addClass("tv-case-study-show");}, 20);
+  }
+
+
+});
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
