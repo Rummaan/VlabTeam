@@ -172,9 +172,9 @@ body {
     -moz-border-radius: 50%;
     border-radius: 50%;
     border: 5px solid;
-    width: 35px;
-    height: 35px;
-    line-height: 25px;
+    width: 40px;
+    height: 40px;
+    line-height: 30px;
     text-align: center;
     color: #fff;
     cursor: pointer;
